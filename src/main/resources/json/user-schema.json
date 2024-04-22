@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1,
+     "pattern": "^(?=.*[A-Z])(?=.*\\d).+$"
+    
+    },
+    "email": {
+      "type": "string",
+      "format": "email"
+    },
+    "address": {
+      "type": "object",
+      "properties": {
+        "street": {
+          "type": "string",
+          "minLength": 1
+        },
+        "city": {
+          "type": "string",
+          "minLength": 1
+        },
+        "state": {
+          "type": "string",
+          "minLength": 1
+        },
+        "zip": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": ["street", "city", "state", "zip"]
+    }
+  },
+  "required": ["name", "email", "address"]
+}
